@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">IdDog</string>
+
+    <!-- LoginActivity -->
+    <string name="has_no_token">Erro ao carregar token!!</string>
+    <string name="label_title_login">informe um email válido</string>
+    <string name="hint_login">email@seudominio.com</string>
+    <string name="incorrect_email">email incorreto</string>
+    <string name="login_button">acessar</string>
+
+    <!-- BreedsActivity -->
+    <string name="has_no_list">Erro ao carregar lista!!</string>
+</resources>
