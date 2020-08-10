@@ -7,7 +7,7 @@ import com.rodilon.dogs.data.remote.source.interfaces.IDogsRemoteDataSource
 class DogsRemoteDataSourceImpl(
     private val api: Api
 ) : IDogsRemoteDataSource {
-    override fun fetchDogs(
+    override suspend fun fetchDogs(
         authorization: String,
         category: String
     ): DogsData = api.fetchDogs(authorization, category)

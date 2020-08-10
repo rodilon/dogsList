@@ -8,5 +8,5 @@ class LoginUseCase(
     val dispatcher: CoroutineDispatcher = Dispatchers.IO,
     private val repository: ILoginRepository
 ) {
-    fun execute(email: String) = repository.doLogin(email)
+    suspend fun execute(email: String) = repository.doLogin(email)
 }

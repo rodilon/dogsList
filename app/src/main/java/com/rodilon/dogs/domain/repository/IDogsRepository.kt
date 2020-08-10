@@ -4,5 +4,5 @@ import com.rodilon.dogs.domain.model.DogsData
 
 interface IDogsRepository {
 
-    fun fetchDogs(authorization: String, category: String): DogsData
+    suspend fun fetchDogs(authorization: String, category: String): DogsData
 }

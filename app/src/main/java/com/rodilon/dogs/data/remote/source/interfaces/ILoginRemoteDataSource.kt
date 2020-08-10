@@ -4,5 +4,5 @@ import com.rodilon.dogs.domain.model.LoginData
 
 interface ILoginRemoteDataSource {
 
-    fun doLogin(email: String): LoginData
+    suspend fun doLogin(email: String): LoginData
 }

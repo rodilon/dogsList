@@ -7,5 +7,5 @@ import com.rodilon.dogs.data.remote.source.interfaces.ILoginRemoteDataSource
 class LoginRepositoryImpl(
     private val dataSource: ILoginRemoteDataSource
 ) : ILoginRepository {
-    override fun doLogin(email: String): LoginData = dataSource.doLogin(email)
+    override suspend fun doLogin(email: String): LoginData = dataSource.doLogin(email)
 }

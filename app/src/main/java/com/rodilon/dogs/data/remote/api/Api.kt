@@ -8,10 +8,10 @@ interface Api {
 
     @FormUrlEncoded
     @POST("/signup")
-    fun doLogin(@Field("email") request: String): LoginData
+    suspend fun doLogin(@Field("email") request: String): LoginData
 
     @GET("/feed")
-    fun fetchDogs(
+    suspend fun fetchDogs(
         @Header("Authorization") authorization: String,
         @Query("category") category: String
     ) : DogsData

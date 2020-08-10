@@ -9,5 +9,6 @@ class DogsUseCase(
     private val repository: IDogsRepository
 ) {
 
-    fun execute(authorization: String, category: String) = repository.fetchDogs(authorization, category)
+    suspend fun execute(authorization: String, category: String) =
+        repository.fetchDogs(authorization, category)
 }

@@ -4,9 +4,21 @@ import com.google.gson.annotations.Expose
 import com.google.gson.annotations.SerializedName
 
 data class LoginData(
-    @SerializedName("userId")
+
+    @SerializedName("user")
     @Expose
-    val userId: String,
+    val user: User
+)
+
+data class User(
+
+    @SerializedName("_id")
+    @Expose
+    val _id: String,
+
+    @SerializedName("email")
+    @Expose
+    val email: String,
 
     @SerializedName("token")
     @Expose
@@ -22,5 +34,5 @@ data class LoginData(
 
     @SerializedName("__v")
     @Expose
-    val v: Int
+    val __v: Int
 )
