@@ -1,14 +1,21 @@
 package com.rodilon.dogs.features.login
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.View
+import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import com.google.android.gms.common.GoogleApiAvailability
 import com.google.android.gms.security.ProviderInstaller
 import com.rodilon.dogs.R
 import com.rodilon.dogs.UtilsExtensions.hideKeyboard
 import com.rodilon.dogs.UtilsExtensions.isValidEmail
+import com.rodilon.dogs.di.ApplicationModules
+import com.rodilon.dogs.domain.Resource
+import com.rodilon.dogs.features.dogs.DogsActivity
 import kotlinx.android.synthetic.main.activity_login.*
 
 private const val ERROR_DIALOG_REQUEST_CODE = 1
@@ -17,12 +24,67 @@ class LoginActivity : AppCompatActivity(), ProviderInstaller.ProviderInstallList
 
     private var retryProviderInstall: Boolean = false
 
+    private val viewModel: LoginViewModel by viewModels {
+        LoginViewModelFactory(ApplicationModules.domainModule.loginUseCase)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         ProviderInstaller.installIfNeededAsync(this, this)
 
+        initListeners()
+        subscribeObservers()
     }
+
+    private fun initListeners() {
+        buttonLogin.setOnClickListener {
+            this.hideKeyboard()
+            val validEmail = textViewEmailLogin.text.toString()
+
+            if (validEmail.isValidEmail()) {
+                viewModel.doLogin(validEmail)
+            } else {
+                textViewWarningEmail.visibility = View.VISIBLE
+            }
+        }
+
+        val textWatcher = object : TextWatcher {
+            override fun afterTextChanged(p0: Editable?) {
+                // do nothing
+            }
+
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                // do nothing
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                textViewWarningEmail.visibility = View.GONE
+            }
+        }
+
+        textViewEmailLogin.addTextChangedListener(textWatcher)
+    }
+
+    private fun subscribeObservers() {
+        viewModel.login.observe(this, Observer { resource ->
+            when (resource) {
+
+                Resource.Loading -> {
+                    println("LOADING...")
+                }
+                is Resource.Success -> {
+                    val token = resource.result.user.token
+                    finish()
+                    startActivity(DogsActivity.getIntentActivity(this, token))
+                }
+                is Resource.Error -> {
+                    println("ERROR... " + resource.error.message)
+                }
+            }
+        })
+    }
+
 
     // region Check Provider
     /**
