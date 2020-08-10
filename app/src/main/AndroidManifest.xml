@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.rodilon.dogs">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".IdwallApplication"
         android:allowBackup="true"
