@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.rodilon.dogs.R
 import com.squareup.picasso.Picasso
 
+private const val WIDTH = 300
+private const val HEIGHT = 300
 class DogsAdapter
 constructor(
     private var list: List<String>
@@ -41,11 +43,10 @@ constructor(
 
         fun setImage(image: String) {
 
-            Picasso.get().setIndicatorsEnabled(true)
-
             Picasso.get()
                 .load(image)
-                .resize(300, 250)
+                .resize(WIDTH, HEIGHT)
+                .centerCrop()
                 .placeholder(R.drawable.white_background)
                 .error(R.drawable.white_background)
                 .into(imageViewBreed)
