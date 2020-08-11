@@ -70,4 +70,7 @@ dependencies {
     // verificar e forçar o usuario a atualizar o google play services
     implementation "com.google.android.gms:play-services-base:17.3.0"
 
+    // salvar token criptografado
+    implementation "com.orhanobut:hawk:2.0.1"
+
 }

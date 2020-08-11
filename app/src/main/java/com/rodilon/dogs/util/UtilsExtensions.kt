@@ -1,4 +1,4 @@
-package com.rodilon.dogs
+package com.rodilon.dogs.util
 
 import android.app.Activity
 import android.content.Context

@@ -11,8 +11,8 @@ import androidx.lifecycle.Observer
 import com.google.android.gms.common.GoogleApiAvailability
 import com.google.android.gms.security.ProviderInstaller
 import com.rodilon.dogs.R
-import com.rodilon.dogs.UtilsExtensions.hideKeyboard
-import com.rodilon.dogs.UtilsExtensions.isValidEmail
+import com.rodilon.dogs.util.UtilsExtensions.hideKeyboard
+import com.rodilon.dogs.util.UtilsExtensions.isValidEmail
 import com.rodilon.dogs.di.ApplicationModules
 import com.rodilon.dogs.domain.Resource
 import com.rodilon.dogs.features.dogs.DogsActivity

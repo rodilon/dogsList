@@ -1,6 +1,7 @@
 package com.rodilon.dogs
 
 import android.app.Application
+import com.orhanobut.hawk.Hawk
 import com.rodilon.dogs.data.di.DataModuleImpl
 import com.rodilon.dogs.data.remote.api.Network
 import com.rodilon.dogs.data.repository.DogsRepositoryImpl
@@ -12,6 +13,8 @@ class IdwallApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
+
+        Hawk.init(this).build()
 
         Network.init()
 

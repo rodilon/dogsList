@@ -8,6 +8,8 @@
     <string name="incorrect_email">email incorreto</string>
     <string name="login_button">acessar</string>
 
-    <!-- BreedsActivity -->
+    <!-- DogsActivity -->
     <string name="has_no_list">Erro ao carregar lista!!</string>
+    <string name="logout">logout</string>
+    <string name="title_toolbar">Dogs - idwall</string>
 </resources>

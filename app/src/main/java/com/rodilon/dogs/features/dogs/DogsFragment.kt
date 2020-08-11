@@ -8,9 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
-import com.rodilon.dogs.Constants.CATEGORY
-import com.rodilon.dogs.Constants.NUMBER_OF_COLUMNS
-import com.rodilon.dogs.Constants.TOKEN
+import com.rodilon.dogs.util.Constants.CATEGORY
+import com.rodilon.dogs.util.Constants.NUMBER_OF_COLUMNS
+import com.rodilon.dogs.util.Constants.TOKEN
 import com.rodilon.dogs.R
 import com.rodilon.dogs.domain.Resource
 import kotlinx.android.synthetic.main.fragment_dogs.*

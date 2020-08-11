@@ -1,4 +1,4 @@
-package com.rodilon.dogs
+package com.rodilon.dogs.util
 
 object Constants {
     const val CATEGORY = "CATEGORY"
