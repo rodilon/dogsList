@@ -6,7 +6,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.rodilon.dogs.Constants.TOKEN
 import com.rodilon.dogs.R
-import kotlinx.android.synthetic.main.activity_dogs.*
 
 class DogsActivity : AppCompatActivity() {
 
@@ -30,6 +29,8 @@ class DogsActivity : AppCompatActivity() {
             token = it.getString(TOKEN)!!
         }
 
-        textView.text = token
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.dogs_container, ViewPagerFragment.newInstance(token), null)
+            .commit()
     }
 }
