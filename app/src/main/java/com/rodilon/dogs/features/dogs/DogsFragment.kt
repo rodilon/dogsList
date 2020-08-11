@@ -8,14 +8,15 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
+import com.rodilon.dogs.features.dogs.ImageDialogFragment.Companion.TAG
+import com.rodilon.dogs.R
+import com.rodilon.dogs.domain.Resource
 import com.rodilon.dogs.util.Constants.CATEGORY
 import com.rodilon.dogs.util.Constants.NUMBER_OF_COLUMNS
 import com.rodilon.dogs.util.Constants.TOKEN
-import com.rodilon.dogs.R
-import com.rodilon.dogs.domain.Resource
 import kotlinx.android.synthetic.main.fragment_dogs.*
 
-class DogsFragment : Fragment(R.layout.fragment_dogs) {
+class DogsFragment : Fragment(R.layout.fragment_dogs), DogsAdapter.ZoomImageListener {
 
     private val viewModel: DogsViewModel by viewModels()
 
@@ -56,7 +57,7 @@ class DogsFragment : Fragment(R.layout.fragment_dogs) {
         showRecyclerView()
         recyclerViewDogs.layoutManager = GridLayoutManager(requireContext(), NUMBER_OF_COLUMNS)
         val adapter =
-            DogsAdapter(images)
+            DogsAdapter(images, this)
         recyclerViewDogs.adapter = adapter
     }
 
@@ -93,5 +94,11 @@ class DogsFragment : Fragment(R.layout.fragment_dogs) {
         textViewEmptyOrError.setOnClickListener {
             subscribeObservers()
         }
+    }
+
+    override fun onClickListener(url: String) {
+        val transaction = childFragmentManager.beginTransaction()
+        val fragment = ImageDialogFragment.newInstance(url)
+        fragment.show(transaction, TAG)
     }
 }

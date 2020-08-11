@@ -12,7 +12,8 @@ private const val WIDTH = 300
 private const val HEIGHT = 300
 class DogsAdapter
 constructor(
-    private var list: List<String>
+    private var list: List<String>,
+    private val listener: ZoomImageListener
 ) : RecyclerView.Adapter<DogsAdapter.BreedsViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BreedsViewHolder {
@@ -31,6 +32,10 @@ constructor(
 
     override fun onBindViewHolder(holder: BreedsViewHolder, position: Int) {
         holder.setImage(list[position])
+
+        holder.itemView.setOnClickListener {
+            listener.onClickListener(list[position])
+        }
     }
 
     class BreedsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -51,5 +56,9 @@ constructor(
                 .error(R.drawable.white_background)
                 .into(imageViewBreed)
         }
+    }
+
+    interface ZoomImageListener {
+        fun onClickListener(url: String)
     }
 }

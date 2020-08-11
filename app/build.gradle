@@ -73,4 +73,7 @@ dependencies {
     // salvar token criptografado
     implementation "com.orhanobut:hawk:2.0.1"
 
+    // Aplicação de zoom nas imagens
+    implementation "com.github.chrisbanes:PhotoView:2.1.4"
+
 }
