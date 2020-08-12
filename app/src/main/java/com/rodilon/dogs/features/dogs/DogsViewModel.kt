@@ -3,17 +3,16 @@ package com.rodilon.dogs.features.dogs
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.rodilon.dogs.di.ApplicationModules
 import com.rodilon.dogs.domain.Resource
 import com.rodilon.dogs.domain.model.DogsData
+import com.rodilon.dogs.domain.usecases.DogsUseCase
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.launch
-import java.io.IOException
 
-class DogsViewModel : ViewModel() {
-
-    private val useCase = ApplicationModules.domainModule.dogsUseCase
+class DogsViewModel(
+    private val useCase: DogsUseCase
+) : ViewModel() {
 
     private val _dogsMutableLiveData = MutableLiveData<Resource<DogsData>>()
     val dogsLiveData: LiveData<Resource<DogsData>> = _dogsMutableLiveData
@@ -33,7 +32,7 @@ class DogsViewModel : ViewModel() {
                     )
                 )
 
-            } catch (e: IOException) {
+            } catch (e: Exception) {
                 _dogsMutableLiveData.postValue(Resource.Error(e))
             }
         }

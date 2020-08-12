@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import com.rodilon.dogs.features.dogs.ImageDialogFragment.Companion.TAG
 import com.rodilon.dogs.R
+import com.rodilon.dogs.di.ApplicationModules
 import com.rodilon.dogs.domain.Resource
 import com.rodilon.dogs.util.Constants.CATEGORY
 import com.rodilon.dogs.util.Constants.NUMBER_OF_COLUMNS
@@ -18,7 +19,9 @@ import kotlinx.android.synthetic.main.fragment_dogs.*
 
 class DogsFragment : Fragment(R.layout.fragment_dogs), DogsAdapter.ZoomImageListener {
 
-    private val viewModel: DogsViewModel by viewModels()
+    private val viewModel: DogsViewModel by viewModels {
+        DogsViewModelFactory(ApplicationModules.domainModule.dogsUseCase)
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
