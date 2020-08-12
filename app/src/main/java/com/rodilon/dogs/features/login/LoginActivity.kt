@@ -40,7 +40,7 @@ class LoginActivity : AppCompatActivity(), ProviderInstaller.ProviderInstallList
     private fun initListeners() {
         buttonLogin.setOnClickListener {
             this.hideKeyboard()
-            val validEmail = textViewEmailLogin.text.toString()
+            val validEmail = editTextEmailLogin.text.toString()
 
             if (validEmail.isValidEmail()) {
                 viewModel.doLogin(validEmail)
@@ -63,7 +63,7 @@ class LoginActivity : AppCompatActivity(), ProviderInstaller.ProviderInstallList
             }
         }
 
-        textViewEmailLogin.addTextChangedListener(textWatcher)
+        editTextEmailLogin.addTextChangedListener(textWatcher)
     }
 
     private fun subscribeObservers() {

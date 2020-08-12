@@ -40,7 +40,7 @@
             app:layout_constraintTop_toBottomOf="@id/imageViewIdDogLogin" />
 
         <androidx.appcompat.widget.AppCompatEditText
-            android:id="@+id/textViewEmailLogin"
+            android:id="@+id/editTextEmailLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
@@ -65,7 +65,7 @@
             android:fontFamily="@font/ubuntu_bold"
             android:textColor="@android:color/holo_red_dark"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textViewEmailLogin"/>
+            app:layout_constraintTop_toBottomOf="@id/editTextEmailLogin"/>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/buttonLogin"
@@ -80,7 +80,7 @@
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewEmailLogin" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextEmailLogin" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -1,10 +1,13 @@
+package com.rodilon.dogs
+
 import com.rodilon.dogs.domain.model.DogsData
 import com.rodilon.dogs.domain.model.LoginData
 import com.rodilon.dogs.domain.model.User
 
-object MockForUnitTest {
+object MockForAndroidTest {
 
     const val EMAIL = "renan@gmail.com"
+    val TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJpZGRvZy1zZXJ2aWNlIiwic3ViIjoiNWYyNmNlODY3M2M4MzAyZGU2MzJiYWFiIiwiaWF0IjoxNTk2Mzc4NzU4LCJleHAiOjE1OTc2NzQ3NTh9.HmdimN3adLUa064_m_-QyORffIxDDTnc7K2oLXpWlhY"
 
     private val USER = User(
         "5f26ce8673c8302de632baab",
