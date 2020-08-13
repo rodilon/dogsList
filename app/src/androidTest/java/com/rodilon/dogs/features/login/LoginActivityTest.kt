@@ -9,8 +9,8 @@ import androidx.test.espresso.intent.matcher.IntentMatchers
 import androidx.test.espresso.intent.rule.IntentsTestRule
 import androidx.test.espresso.matcher.ViewMatchers
 import androidx.test.espresso.matcher.ViewMatchers.withEffectiveVisibility
-import com.rodilon.dogs.MockForAndroidTest.DOGS_DATA
-import com.rodilon.dogs.MockForAndroidTest.LOGIN_DATA
+import com.rodilon.dogs.features.mock.MockForAndroidTest.DOGS_DATA
+import com.rodilon.dogs.features.mock.MockForAndroidTest.LOGIN_DATA
 import com.rodilon.dogs.R
 import com.rodilon.dogs.di.ApplicationModules
 import com.rodilon.dogs.domain.di.IDomainModule

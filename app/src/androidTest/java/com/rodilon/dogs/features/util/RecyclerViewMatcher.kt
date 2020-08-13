@@ -1,4 +1,4 @@
-package com.rodilon.dogs
+package com.rodilon.dogs.features.util
 
 import android.content.res.Resources
 import android.view.View

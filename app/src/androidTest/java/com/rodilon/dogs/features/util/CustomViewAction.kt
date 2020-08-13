@@ -1,4 +1,4 @@
-package com.rodilon.dogs
+package com.rodilon.dogs.features.util
 
 import android.view.View
 import androidx.test.espresso.PerformException
