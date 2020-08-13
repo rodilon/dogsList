@@ -19,13 +19,24 @@ import kotlinx.android.synthetic.main.fragment_dogs.*
 
 class DogsFragment : Fragment(R.layout.fragment_dogs), DogsAdapter.ZoomImageListener {
 
+    companion object {
+        fun newInstance(token: String, category: String): DogsFragment {
+            val fragment = DogsFragment()
+            fragment.arguments = Bundle().apply {
+                putString(TOKEN, token)
+                putString(CATEGORY, category)
+            }
+            return fragment
+        }
+    }
+
     private val viewModel: DogsViewModel by viewModels {
         DogsViewModelFactory(ApplicationModules.domainModule.dogsUseCase)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
 
-        arguments?.takeIf { it.containsKey(TOKEN) }?.apply {
+        arguments?.takeIf { it.containsKey(TOKEN) && it.containsKey(CATEGORY) }?.apply {
             viewModel.fetchDogs(getString(TOKEN).toString(), getString(CATEGORY).toString())
         }
 

@@ -83,14 +83,7 @@ class ViewPagerFragment : Fragment(R.layout.fragment_viewpager) {
                 THREE -> LABRADOR
                 else -> HUSKY
             }
-
-            val fragment =
-                DogsFragment()
-            fragment.arguments = Bundle().apply {
-                putString(TOKEN, authorization)
-                putString(CATEGORY, category)
-            }
-            return fragment
+            return DogsFragment.newInstance(authorization, category)
         }
     }
 }
