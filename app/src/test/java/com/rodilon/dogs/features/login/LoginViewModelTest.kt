@@ -1,13 +1,11 @@
 package com.rodilon.dogs.features.login
 
-import MockForUnitTest.EMAIL
-import MockForUnitTest.LOGIN_DATA
+import com.rodilon.dogs.mock.MockForUnitTest.EMAIL
+import com.rodilon.dogs.mock.MockForUnitTest.LOGIN_DATA
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.google.common.truth.Truth.assertThat
-import com.rodilon.dogs.MainCoroutineScopeRule
+import com.rodilon.dogs.util.MainCoroutineScopeRule
 import com.rodilon.dogs.domain.Resource
-import com.rodilon.dogs.domain.model.LoginData
-import com.rodilon.dogs.domain.model.User
 import com.rodilon.dogs.domain.repository.ILoginRepository
 import com.rodilon.dogs.domain.usecases.LoginUseCase
 import io.mockk.coEvery

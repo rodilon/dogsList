@@ -1,11 +1,11 @@
 package com.rodilon.dogs.features.dogs
 
-import MockForUnitTest.AUTHORIZATION
-import MockForUnitTest.CATEGORY
-import MockForUnitTest.DOGS_DATA
+import com.rodilon.dogs.mock.MockForUnitTest.AUTHORIZATION
+import com.rodilon.dogs.mock.MockForUnitTest.CATEGORY
+import com.rodilon.dogs.mock.MockForUnitTest.DOGS_DATA
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.google.common.truth.Truth
-import com.rodilon.dogs.MainCoroutineScopeRule
+import com.rodilon.dogs.util.MainCoroutineScopeRule
 import com.rodilon.dogs.domain.Resource
 import com.rodilon.dogs.domain.repository.IDogsRepository
 import com.rodilon.dogs.domain.usecases.DogsUseCase
@@ -20,7 +20,7 @@ import org.junit.Test
 @ExperimentalCoroutinesApi
 class DogsViewModelTest {
 
-    lateinit var subject: DogsViewModel
+    private lateinit var subject: DogsViewModel
 
     @get:Rule
     val instantTaskExecutorRule = InstantTaskExecutorRule()

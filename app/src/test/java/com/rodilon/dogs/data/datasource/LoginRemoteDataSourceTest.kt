@@ -1,8 +1,8 @@
 package com.rodilon.dogs.data.datasource
 
-import MockForUnitTest.EMAIL
+import com.rodilon.dogs.mock.MockForUnitTest.EMAIL
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.rodilon.dogs.MainCoroutineScopeRule
+import com.rodilon.dogs.util.MainCoroutineScopeRule
 import com.rodilon.dogs.data.remote.api.Api
 import com.rodilon.dogs.data.remote.source.implementation.LoginRemoteDataSourceImpl
 import io.mockk.coVerify

@@ -1,9 +1,9 @@
 package com.rodilon.dogs.domain.usecases
 
-import MockForUnitTest.AUTHORIZATION
-import MockForUnitTest.CATEGORY
+import com.rodilon.dogs.mock.MockForUnitTest.AUTHORIZATION
+import com.rodilon.dogs.mock.MockForUnitTest.CATEGORY
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.rodilon.dogs.MainCoroutineScopeRule
+import com.rodilon.dogs.util.MainCoroutineScopeRule
 import com.rodilon.dogs.domain.repository.IDogsRepository
 import io.mockk.coVerify
 import io.mockk.mockk

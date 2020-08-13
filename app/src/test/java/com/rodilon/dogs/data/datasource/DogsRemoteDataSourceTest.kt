@@ -1,9 +1,9 @@
 package com.rodilon.dogs.data.datasource
 
-import MockForUnitTest.AUTHORIZATION
-import MockForUnitTest.CATEGORY
+import com.rodilon.dogs.mock.MockForUnitTest.AUTHORIZATION
+import com.rodilon.dogs.mock.MockForUnitTest.CATEGORY
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.rodilon.dogs.MainCoroutineScopeRule
+import com.rodilon.dogs.util.MainCoroutineScopeRule
 import com.rodilon.dogs.data.remote.api.Api
 import com.rodilon.dogs.data.remote.source.implementation.DogsRemoteDataSourceImpl
 import io.mockk.coVerify

@@ -1,3 +1,5 @@
+package com.rodilon.dogs.mock
+
 import com.rodilon.dogs.domain.model.DogsData
 import com.rodilon.dogs.domain.model.LoginData
 import com.rodilon.dogs.domain.model.User

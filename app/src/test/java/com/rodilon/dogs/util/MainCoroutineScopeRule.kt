@@ -1,4 +1,4 @@
-package com.rodilon.dogs
+package com.rodilon.dogs.util
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi

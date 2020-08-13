@@ -1,14 +1,12 @@
 package com.rodilon.dogs.data.repository
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.rodilon.dogs.MainCoroutineScopeRule
-import com.rodilon.dogs.data.remote.source.interfaces.IDogsRemoteDataSource
+import com.rodilon.dogs.util.MainCoroutineScopeRule
 import com.rodilon.dogs.data.remote.source.interfaces.ILoginRemoteDataSource
 import io.mockk.coVerify
 import io.mockk.mockk
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.runBlocking
-import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test

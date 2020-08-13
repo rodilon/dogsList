@@ -1,7 +1,7 @@
 package com.rodilon.dogs.data.repository
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.rodilon.dogs.MainCoroutineScopeRule
+import com.rodilon.dogs.util.MainCoroutineScopeRule
 import com.rodilon.dogs.data.remote.source.interfaces.IDogsRemoteDataSource
 import io.mockk.coVerify
 import io.mockk.mockk

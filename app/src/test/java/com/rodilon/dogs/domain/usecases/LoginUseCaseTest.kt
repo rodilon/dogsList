@@ -1,8 +1,8 @@
 package com.rodilon.dogs.domain.usecases
 
-import MockForUnitTest.EMAIL
+import com.rodilon.dogs.mock.MockForUnitTest.EMAIL
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
-import com.rodilon.dogs.MainCoroutineScopeRule
+import com.rodilon.dogs.util.MainCoroutineScopeRule
 import com.rodilon.dogs.domain.repository.ILoginRepository
 import io.mockk.coVerify
 import io.mockk.mockk
